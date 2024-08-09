@@ -11,8 +11,9 @@ type User struct {
 
 type Pet struct {
 	gorm.Model
-	Name   string
-	User   User
-	Sacola string
-	UserID uint
+	Name     string
+	Nickname string
+	User     User
+	Sacola   string
+	UserID   uint
 }
