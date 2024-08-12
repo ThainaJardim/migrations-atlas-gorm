@@ -1,5 +1,10 @@
 data "external_schema" "gorm" {
-  program = ["go", "run", "./cmd/main.go"]
+  program = [
+    "go",
+    "run",
+    "-mod=mod",
+    "./cmd/main.go",
+  ]
 }
 
 env "gorm" {
@@ -8,7 +13,6 @@ env "gorm" {
   migration {
     dir = "file://migrations"
   }
-
   format {
     migrate {
       diff = "{{ sql . \"  \" }}"
